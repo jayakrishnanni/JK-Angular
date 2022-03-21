@@ -1,13 +1,11 @@
-<div id="sidebar">
+<div id="covid-19-sidebar" *ngIf="!display">
   <div class="container">
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
       <div class="row">
-         <ul>
-           <li><a routerLink="'/dashboard'"><i class="fa fa-folder" aria-hidden="true"></i></a></li>
-           <li><a routerLink="'/countries'"><i class="fa fa-folder" aria-hidden="true"></i></a></li>
-           <li><a routerLink="'/logout'"><i class="fa fa-folder" aria-hidden="true"></i></a></li>
-         </ul>
+        <div class="col-md-1">
+          <a [routerLink]="['/dashboard']"><span class="material-icons"> dashboard</span></a>
+          <a [routerLink]="['/countries']"><span class="material-icons">flag</span></a>
+          <a [routerLink]="['/login']"><span class="material-icons">logout</span></a>
+        </div>
       </div>
-    </div>
   </div>
 </div>

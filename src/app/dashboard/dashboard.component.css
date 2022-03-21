@@ -1,0 +1,32 @@
+#covid-19-dashboard .col-md-4 {
+  flex: 0 0 auto;
+  width: 31%;
+  position: relative;
+  display: inline-block;
+}
+#covid-19-dashboard h1 {
+  border-bottom: 2px solid #ddd;
+}
+#covid-19-dashboard .sections {
+  border: 1px solid black;
+  margin-top: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 60px;
+  padding: 22px;
+  text-align: center;
+  box-shadow: 0 0 0 1px #1870f0;
+  border-radius: 4px;
+}
+#covid-19-dashboard .sections span {
+  display: block;
+  font-size: 30px;
+  font-weight: 600;
+  color: #297af1;
+}
+#covid-19-dashboard .sections  label {
+  font-family: roboto;
+  color: #297af1;
+  font-weight: 400;
+  font-size: 20px;
+}
