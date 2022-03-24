@@ -25,7 +25,7 @@ export class CountriesComponent implements OnInit {
   }
 
   getCountrywiseCovidStatus (){
-    this.covideCountryData = this.authService.getCountriesCases().subscribe(response =>{
+    this.covideCountryData = this.authService.getCountriesCases().subscribe((response:any) =>{
       console.log('jkkk response'+JSON.stringify(response));
       if(response){
         this.covidCountrywiseStatus = response;
@@ -39,5 +39,6 @@ export class CountriesComponent implements OnInit {
       }
     })
   }
+  
 
 }
