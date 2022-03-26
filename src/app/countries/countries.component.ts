@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Subscription } from "rxjs";
 import { AuthServiceService } from "../service/auth-service.service";
 
@@ -7,8 +7,9 @@ import { AuthServiceService } from "../service/auth-service.service";
   templateUrl: './countries.component.html',
   styleUrls: ['./countries.component.css']
 })
+
 export class CountriesComponent implements OnInit {
- 
+  
   private covideCountryData !: Subscription;
   covidCountryDataStatus !: boolean;
   covidCountryDataStatusMsg = '';
@@ -21,10 +22,19 @@ export class CountriesComponent implements OnInit {
    this.data = new Array<any>();
   }
 
-  ngOnInit(): void {
+  
+    
+  
+    
+  // Using the merged interface
+ 
+    
+ 
+  ngOnInit() {
     this.getCountrywiseCovidStatus();
   }
-
+  
+  
   getCountrywiseCovidStatus (){
     this.covideCountryData = this.authService.getCountriesCases().subscribe((response:any) =>{
       console.log('jkkk response'+JSON.stringify(response));
