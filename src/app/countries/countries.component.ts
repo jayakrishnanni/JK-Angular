@@ -8,6 +8,7 @@ import { AuthServiceService } from "../service/auth-service.service";
   styleUrls: ['./countries.component.css']
 })
 export class CountriesComponent implements OnInit {
+ 
   private covideCountryData !: Subscription;
   covidCountryDataStatus !: boolean;
   covidCountryDataStatusMsg = '';
