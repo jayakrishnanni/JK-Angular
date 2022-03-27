@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { Subscription } from "rxjs";
 import { AuthServiceService } from "../service/auth-service.service";
+import { IGame } from '../Interface/Interface'
 
 @Component({
   selector: 'app-countries',
@@ -9,6 +10,8 @@ import { AuthServiceService } from "../service/auth-service.service";
 })
 
 export class CountriesComponent implements OnInit {
+
+   igame: IGame |  undefined;
   
   private covideCountryData !: Subscription;
   covidCountryDataStatus !: boolean;
@@ -16,7 +19,10 @@ export class CountriesComponent implements OnInit {
   covidCountrywiseStatus:any = [];
   data: Array<any>;
   totalRecords !: string;
-  page : number = 1;
+  page : number = 1;  
+
+
+  
 
   constructor( private authService : AuthServiceService) {
    this.data = new Array<any>();
@@ -31,6 +37,17 @@ export class CountriesComponent implements OnInit {
     
  
   ngOnInit() {
+    this.igame = {
+      gameId: 123,
+      gameName!: 'abc',
+      gameCode: 'abc',
+      releaseDate: 'abc',
+      price: 123,
+      description: 'abc',
+      thumbRating: 123,
+      imageUrl: 'abc',
+  }
+  console.log(this.igame.gameId)
     this.getCountrywiseCovidStatus();
   }
   

@@ -8,6 +8,7 @@
         <div class="col-md-11"  *ngIf="covidCountryDataStatus">
                     <div class="col-md-12">
                       <h1>Total</h1>
+                      <p> ### Interface value   {{igame}}</p>
                     </div>
                     <div class="col-md-12">
                       <div class="col-md-4 sections" *ngFor="let covidCountry of covidCountrywiseStatus | paginate: { itemsPerPage: 10, currentPage: page, totalItems: totalRecords}">

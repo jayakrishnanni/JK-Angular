@@ -8,7 +8,6 @@
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
@@ -21,7 +20,14 @@
     "lib": [
       "es2020",
       "dom"
-    ]
+    ],
+    "noImplicitReturns": false,
+  "noImplicitAny": true,
+  "noImplicitThis": true,
+  "alwaysStrict": true,
+  "strictNullChecks": true,
+  "strictFunctionTypes": true,
+  "strictPropertyInitialization": true,
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
