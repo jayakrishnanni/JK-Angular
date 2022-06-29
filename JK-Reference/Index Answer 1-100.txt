@@ -18,6 +18,10 @@ npm: npm is installed with Node automatically.
 yarn: To install yarn npm have to be installed.
 npm install yarn --global
 
+npm: npm is installed with Node automatically.
+yarn: To install yarn npm have to be installed.
+npm install yarn --global
+
 
 
 
