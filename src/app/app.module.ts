@@ -11,6 +11,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { EditDetailsComponent } from './edit-details/edit-details.component';
 import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { UsersComponent } from './users/users.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     DashboardComponent,
     CountriesComponent,
     SidebarComponent,
-    EditDetailsComponent
+    EditDetailsComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
