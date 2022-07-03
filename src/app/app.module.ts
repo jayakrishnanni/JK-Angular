@@ -3,15 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { ErrorpageComponent } from './errorpage/errorpage.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { CountriesComponent } from './countries/countries.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { EditDetailsComponent } from './edit-details/edit-details.component';
+import { LoginComponent } from '../app/components/login/login.component';
+import { ErrorpageComponent } from '../app/components/errorpage/errorpage.component';
+import { DashboardComponent } from '../app/components/dashboard/dashboard.component';
+import { CountriesComponent } from '../app/components/countries/countries.component';
+import { SidebarComponent } from '../app/components/sidebar/sidebar.component';
+import { EditDetailsComponent } from '../app/components/edit-details/edit-details.component';
 import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { UsersComponent } from './users/users.component';
+import { UsersComponent } from '../app/components/users/users.component';
 @NgModule({
   declarations: [
     AppComponent,
