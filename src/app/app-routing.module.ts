@@ -14,8 +14,9 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: 'countries', component: CountriesComponent},
   {path: 'countries/edit/:id', component: EditDetailsComponent},
-  {path: '**', component: ErrorpageComponent},
-  {path: 'users', component: UsersComponent}
+  {path: 'users', component: UsersComponent},
+  {path: '**', component: ErrorpageComponent}
+  
 ];
 
 @NgModule({
