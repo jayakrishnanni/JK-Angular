@@ -26,7 +26,7 @@ export class DashboardComponent implements OnInit {
   }
 
   getCovidData () {
-    this.covidData = this.authService.getDashboard().subscribe((data: any)=>{
+    this.covidData = this.authService.getDashboard().subscribe((data:any)=>{
       if(data){
         this.covidDataStatus = true;
         this.cases = data.cases;

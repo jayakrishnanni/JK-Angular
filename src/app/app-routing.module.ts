@@ -8,6 +8,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { EditDetailsComponent } from "./components/edit-details/edit-details.component";
 import { UsersComponent } from './components/users/users.component';
 
+
 const routes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'login', component: LoginComponent},
