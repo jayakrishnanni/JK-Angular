@@ -12,6 +12,7 @@ import { EditDetailsComponent } from './components/edit-details/edit-details.com
 import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { UsersComponent } from './components/users/users.component';
+
 @NgModule({
   declarations: [
     AppComponent,
