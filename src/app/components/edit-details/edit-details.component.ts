@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { AuthServiceService } from "../service/auth-service.service";
+import { AuthServiceService } from "../../service/auth-service.service";
 
 @Component({
   selector: 'app-edit-details',
@@ -31,7 +31,7 @@ export class EditDetailsComponent implements OnInit {
   };
 
   getCountrywiseCovidStatus (){
-    this.authService.getCountriesCases().subscribe(response =>{
+    this.authService.getCountriesCases().subscribe((response:any) =>{
       console.log('jkkk response'+JSON.stringify(response));
       if(response){
         this.covidCountrywiseStatus = response;

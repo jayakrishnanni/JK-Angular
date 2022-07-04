@@ -1,6 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { Subscription } from "rxjs";
-import { AuthServiceService } from "../service/auth-service.service";
+import { AuthServiceService } from "../../service/auth-service.service";
 import { IGame } from '../Interface/Interface'
 
 @Component({

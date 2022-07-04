@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from "./login/login.component";
-import { ErrorpageComponent } from "./errorpage/errorpage.component";
-import { CountriesComponent } from "./countries/countries.component";
-import { DashboardComponent } from "./dashboard/dashboard.component";
+import { LoginComponent } from "../app/components/login/login.component";
+import { ErrorpageComponent } from "../app/components/errorpage/errorpage.component";
+import { CountriesComponent } from "../app/components/countries/countries.component";
+import { DashboardComponent } from "../app/components/dashboard/dashboard.component";
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import {EditDetailsComponent} from "./edit-details/edit-details.component";
+import {EditDetailsComponent} from "../app/components/edit-details/edit-details.component";
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
