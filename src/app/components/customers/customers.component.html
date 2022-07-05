@@ -1,0 +1,33 @@
+<div id="customer">
+<div class="customer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <h2>Customers</h2>
+                <span>Click <button (click)="customersdetails()">here</button> to fetch customer details</span>
+                <table *ngIf="customerDataDetails ===true">
+                    <tr>
+                        <th>No</th>
+                        <th>Title</th>
+                        <th>Name</th>
+                        <th>Gender</th>
+                        <th>Nationality</th>
+                    </tr>
+                     <!-- we can add  index as i as well  -->
+                    <tr *ngFor="let customer of customerData  | paginate: { itemsPerPage: 10, currentPage: page, totalItems: totalRecords}">
+                        <td> </td>
+                        <td> {{customer.name.title}} </td>
+                        <td> {{customer.name.first +" "+ customer.name.last}} </td>
+                        <td> {{customer.gender}} </td>
+                        <td> {{customer.nat}} </td>
+                    </tr>
+                </table>
+                <ng-container *ngIf="customerDataDetails ===true">
+                    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+

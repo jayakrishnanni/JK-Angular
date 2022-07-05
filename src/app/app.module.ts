@@ -12,6 +12,7 @@ import { EditDetailsComponent } from '../app/components/edit-details/edit-detail
 import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { UsersComponent } from '../app/components/users/users.component';
+import { CustomersComponent } from './components/customers/customers.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { UsersComponent } from '../app/components/users/users.component';
     CountriesComponent,
     SidebarComponent,
     EditDetailsComponent,
-    UsersComponent
+    UsersComponent,
+    CustomersComponent
   ],
   imports: [
     BrowserModule,

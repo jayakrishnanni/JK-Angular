@@ -7,6 +7,8 @@ import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { EditDetailsComponent } from "./components/edit-details/edit-details.component";
 import { UsersComponent } from './components/users/users.component';
+import { CustomersComponent } from './components/customers/customers.component';
+
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -15,6 +17,7 @@ const routes: Routes = [
   {path: 'countries', component: CountriesComponent},
   {path: 'countries/edit/:id', component: EditDetailsComponent},
   {path: 'users', component: UsersComponent},
+  {path: 'customer', component: CustomersComponent},
   {path: '**', component: ErrorpageComponent}
   
 ];
