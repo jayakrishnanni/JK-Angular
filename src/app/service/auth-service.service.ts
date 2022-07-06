@@ -14,7 +14,7 @@ export class AuthServiceService {
 
   // Use https://corona.lmao.ninja/v2/all API to
 
-  getDashboard() {
+  getDashboard() : Observable<any> {
     return this.http.get<any>('https://corona.lmao.ninja/v2/all',{})
       .pipe(
         tap(data => {
