@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { UsersComponent } from '../app/components/users/users.component';
 import { CustomersComponent } from './components/customers/customers.component';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { CustomersComponent } from './components/customers/customers.component';
     FormsModule,
     NgxPaginationModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
