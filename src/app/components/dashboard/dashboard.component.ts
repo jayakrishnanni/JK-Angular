@@ -8,27 +8,27 @@ import {AuthServiceService} from "../../service/auth-service.service"
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  covidData !: Subscription;
-  covideCountryData !: Subscription;
-  covidDataStatus !: boolean;
+  chipmunkData !: Subscription;
+  chipmunkeCountryData !: Subscription;
+  chipmunkDataStatus !: boolean;
   cases !: number;
   deaths !: number;
   recovered !: number;
   todayCases !: number;
   todayDeaths !: number;
   todayRecovered !: number;
-  covidDataStatusMsg ='';
+  chipmunkDataStatusMsg ='';
 
   constructor(private authService: AuthServiceService) { }
 
   ngOnInit(): void {
-    this.getCovidData();
+    this.getchipmunkData();
   }
 
-  getCovidData () {
-    this.covidData = this.authService.getDashboard().subscribe((data:any)=>{
+  getchipmunkData () {
+    this.chipmunkData = this.authService.getDashboard().subscribe((data:any)=>{
       if(data){
-        this.covidDataStatus = true;
+        this.chipmunkDataStatus = true;
         this.cases = data.cases;
         this.deaths = data.deaths;
         this.recovered = data.recovered;
@@ -37,8 +37,8 @@ export class DashboardComponent implements OnInit {
         this.todayRecovered = data.todayRecovered;
       }
       else {
-        this.covidDataStatus = false;
-        this.covidDataStatusMsg = 'Something went wrong';
+        this.chipmunkDataStatus = false;
+        this.chipmunkDataStatusMsg = 'Something went wrong';
       }
     })
   }

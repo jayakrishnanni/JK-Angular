@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthServiceService } from 'src/app/service/auth-service.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,12 +10,13 @@ import { Router } from '@angular/router';
 export class SidebarComponent implements OnInit {
   display: boolean | any;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+    private authservice: AuthServiceService) { }
 
   ngOnInit(): void {
   }
 
-
+ 
   displaynone(){
     if(this.router.url === '/login') {
       this.display = false;
@@ -22,4 +24,13 @@ export class SidebarComponent implements OnInit {
       this.display = true;
     }
   }
+
+
+  login() {
+    this.authservice.login();
+    }
+
+    logout() {
+      this.authservice.logout();
+      }
 }

@@ -1,37 +1,41 @@
-#covid-19-login input {
+#chipmunk-login input {
   display: block;
   padding: 10px;
   margin: 10px 0;
   width: 100%;
 }
-#covid-19-login h1 {
-  font-size: 2.5rem;
-  margin-top: 5em;
-}
-#covid-19-login form.login-form {
+
+#chipmunk-login form.login-form {
   padding: 30px;
-  height: 260px;
   border: 1px solid #ddd;
-  margin-top: 60px;
   border-radius: 5px;
   box-shadow: 1px 1px 1px 1px #ddd;
-  width: 20em;
-  text-align: center;
 }
-#covid-19-login .login-btn {
+
+#chipmunk-login .login-btn {
   width: 260px;
   border-radius: 15px;
   background: #0a58ca;
   color: white;
   border: 1px solid black;
 }
-#covid-19-login {
-  height: 30em;
-  background-image: url("../../../assets/ALLIANCE-LIGHT-BLUE-BACKGROUND-LAYER-SMALL.png");
-  background-repeat: no-repeat;
-}
-div#covid-19-login .h3,
-div#covid-19-login h3 {
+
+div#chipmunk-login .h3,
+div#chipmunk-login h3 {
   font-size: 14px;
   color: red;
+}
+
+#chipmunk-login .login-heading {
+  top: 50%;
+  position: absolute;
+  left: 0;
+  text-align: center;
+}
+
+#chipmunk-login .login-form {
+  top: 50%;
+  position: absolute;
+  right: 10%;
+  text-align: center;
 }

@@ -13,10 +13,10 @@ export class CountriesComponent implements OnInit {
 
    igame: IGame |  undefined;
   
-  private covideCountryData !: Subscription;
-  covidCountryDataStatus !: boolean;
-  covidCountryDataStatusMsg = '';
-  covidCountrywiseStatus:any = [];
+  private chipmunkeCountryData !: Subscription;
+  chipmunkCountryDataStatus !: boolean;
+  chipmunkCountryDataStatusMsg = '';
+  chipmunkCountrywiseStatus:any = [];
   data: Array<any>;
   totalRecords !: string;
   page : number = 1;  
@@ -48,22 +48,22 @@ export class CountriesComponent implements OnInit {
       imageUrl: 'abc',
   }
   console.log(this.igame.gameId)
-    this.getCountrywiseCovidStatus();
+    this.getCountrywisechipmunkStatus();
   }
   
   
-  getCountrywiseCovidStatus (){
-    this.covideCountryData = this.authService.getCountriesCases().subscribe((response:any) =>{
+  getCountrywisechipmunkStatus (){
+    this.chipmunkeCountryData = this.authService.getCountriesCases().subscribe((response:any) =>{
       console.log('jkkk response'+JSON.stringify(response));
       if(response){
-        this.covidCountrywiseStatus = response;
-        this.covidCountryDataStatus = true;
+        this.chipmunkCountrywiseStatus = response;
+        this.chipmunkCountryDataStatus = true;
         this.data = response;
         this.totalRecords = response.length;
       }
       else {
-        this.covidCountryDataStatus = false;
-        this.covidCountryDataStatusMsg = 'Something went wrong';
+        this.chipmunkCountryDataStatus = false;
+        this.chipmunkCountryDataStatusMsg = 'Something went wrong';
       }
     })
   }

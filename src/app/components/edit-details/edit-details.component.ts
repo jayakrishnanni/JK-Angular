@@ -11,7 +11,7 @@ import { AuthServiceService } from "../../service/auth-service.service";
 export class EditDetailsComponent implements OnInit {
   routerSub !: Subscription;
   countryId : any;
-  covidCountrywiseStatus= [];
+  chipmunkCountrywiseStatus= [];
   currentCountry= {};
   cases: any;
   deaths!: number;
@@ -27,15 +27,15 @@ export class EditDetailsComponent implements OnInit {
       console.log('jkkk params'+JSON.stringify(params));
       this.countryId = params['id'];
     });
-    this.getCountrywiseCovidStatus();
+    this.getCountrywisechipmunkStatus();
   };
 
-  getCountrywiseCovidStatus (){
+  getCountrywisechipmunkStatus (){
     this.authService.getCountriesCases().subscribe((response:any) =>{
       console.log('jkkk response'+JSON.stringify(response));
       if(response){
-        this.covidCountrywiseStatus = response;
-        this.covidCountrywiseStatus.forEach((data:any) => {
+        this.chipmunkCountrywiseStatus = response;
+        this.chipmunkCountrywiseStatus.forEach((data:any) => {
           if(data.countryInfo._id == this.countryId){
             this.currentCountry = data;
             this.cases = data.cases;

@@ -10,7 +10,7 @@ ul.dashborad-sidebar {
 ul.dashborad-sidebar li  a {
   color: #ffffff;
 }
-#covid-19-sidebar {
+#chipmunk-sidebar {
   border-radius: 4px;
   background: blue;
   color: white;
@@ -25,9 +25,9 @@ span.material-icons:nth-child(1),
 span.material-icons:nth-child(2) {
   padding: 20px 0;
 }
-#covid-19-sidebar a {
+#chipmunk-sidebar a {
   color: #ffffff;
 }
-#covid-19-sidebar a {
+#chipmunk-sidebar a {
   color: #ffffff;
 }

@@ -1,11 +1,11 @@
-<div id="covid-19-dashboard">
+<div id="chipmunk-dashboard">
   <div class="container">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <div class="row">
         <div class="col-md-1">
           <app-sidebar></app-sidebar>
         </div>
-          <div class="col-md-10"  *ngIf="covidDataStatus">
+          <div class="col-md-10"  *ngIf="chipmunkDataStatus">
            <div class="col-md-12">
              <h1>Total</h1>
            </div>
@@ -41,8 +41,8 @@
             </div>
           </div>
           </div>
-          <div class="col-md-10" *ngIf="!covidDataStatus">
-             {{covidDataStatusMsg}}
+          <div class="col-md-10" *ngIf="!chipmunkDataStatus">
+             {{chipmunkDataStatusMsg}}
           </div>
       </div>
     </div>
