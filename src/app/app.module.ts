@@ -13,10 +13,8 @@ import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { UsersComponent } from '../app/components/users/users.component';
 import { CustomersComponent } from './components/customers/customers.component';
-
 import { AuthGuard } from './guards/auth.guard';
-import { CommonProblemsComponent } from './components/common-problem/common-problems/common-problems.component';
-import  {HttpClientModule} from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,8 +26,7 @@ import  {HttpClientModule} from '@angular/common/http'
     SidebarComponent,
     EditDetailsComponent,
     UsersComponent,
-    CustomersComponent,
-    CommonProblemsComponent
+    CustomersComponent
   ],
   imports: [
     BrowserModule,
