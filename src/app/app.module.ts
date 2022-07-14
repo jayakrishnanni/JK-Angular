@@ -16,6 +16,7 @@ import { CustomersComponent } from './components/customers/customers.component';
 
 import { AuthGuard } from './guards/auth.guard';
 import { CommonProblemsComponent } from './components/common-problem/common-problems/common-problems.component';
+import  {HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { CommonProblemsComponent } from './components/common-problem/common-prob
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    HttpClientModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]
