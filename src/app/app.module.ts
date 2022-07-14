@@ -15,6 +15,7 @@ import { UsersComponent } from '../app/components/users/users.component';
 import { CustomersComponent } from './components/customers/customers.component';
 
 import { AuthGuard } from './guards/auth.guard';
+import { CommonProblemsComponent } from './components/common-problem/common-problems/common-problems.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AuthGuard } from './guards/auth.guard';
     SidebarComponent,
     EditDetailsComponent,
     UsersComponent,
-    CustomersComponent
+    CustomersComponent,
+    CommonProblemsComponent
   ],
   imports: [
     BrowserModule,
