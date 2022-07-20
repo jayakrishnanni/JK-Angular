@@ -34,10 +34,12 @@ export class LoginComponent implements OnInit {
     }
      if(data) {
        if(this.loginForm.value.username == 'chipmunk' && this.loginForm.value.password == 'chipmunk'){
+        this.authService.login();
          this.router.navigate(['/dashboard']);
        }
        else {
          this.errorMsg = 'Incorrect username or password';
+         this.authService.logout();
        }
      }
   }

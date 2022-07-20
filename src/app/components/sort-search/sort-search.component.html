@@ -1,0 +1,24 @@
+<p>sort-search works!</p>
+<nav class="nav-bar">
+    <input type="text" class="form-control"  [(ngModel)]="firstname" (ngModelChange)="Search()">
+</nav>
+<table class="table table-boardered">
+    <thead>
+        <tr>
+            <th (click)="sort('id')">Id $nsbp; <i class="fa fa-sort"></i></th>
+            <th>User Id</th>
+            <th>Title</th>
+            <th>Body</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- | orderBy : key: reverse -->
+        <tr *ngFor="let userss of users">
+            <td> {{userss.id}}</td>
+            <td> {{userss.userId}}</td>
+            <td> {{userss.title}}</td>
+            <td> {{userss.body}}</td>
+        </tr> 
+    </tbody>
+    
+</table>
