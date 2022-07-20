@@ -24,6 +24,8 @@ import { SortSearchComponent } from './components/sort-search/sort-search.compon
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { Ng2OrderModule } from 'ng2-order-pipe';
 import { Ng2PaginationModule } from 'ng2-pagination';
+import { ParentComponentComponent } from './components/parent-component/parent-component.component';
+import { ChildComponentComponent } from './components/child-component/child-component.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { Ng2PaginationModule } from 'ng2-pagination';
     TableComponent,
     CallApplyBindComponent,
     FilterMapReduceComponent,
-    SortSearchComponent
+    SortSearchComponent,
+    ParentComponentComponent,
+    ChildComponentComponent
   ],
   imports: [
     BrowserModule,

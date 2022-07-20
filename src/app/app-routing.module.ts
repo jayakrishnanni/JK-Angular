@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { ChildActivationEnd, RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from "./components/login/login.component";
 import { ErrorpageComponent } from "./components/errorpage/errorpage.component";
 import { CountriesComponent } from "./components/countries/countries.component";
@@ -16,6 +16,8 @@ import { TableComponent } from './components/table/table.component';
 import { CallApplyBindComponent } from './components/call-apply-bind/call-apply-bind.component';
 import { FilterMapReduceComponent } from './components/filter-map-reduce/filter-map-reduce.component';
 import { SortSearchComponent } from './components/sort-search/sort-search.component';
+import { ParentComponentComponent } from './components/parent-component/parent-component.component';
+import { ChildComponentComponent } from './components/child-component/child-component.component';
 
 
 const routes: Routes = [
@@ -34,6 +36,8 @@ const routes: Routes = [
   {path: 'filtermapreduce', component: FilterMapReduceComponent},
   {path: 'commonproblems', component: CommonProblemsComponent},
   {path: 'sortfilter', component: SortSearchComponent},
+  {path: 'parantclear', component: ParentComponentComponent},
+  {path: 'child', component: ChildComponentComponent},
   
   {path: '**', component: ErrorpageComponent}
   
