@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CustomerService } from 'src/app/service/customer.service';
+import { UsersService } from 'src/app/service/users.service';
 
 @Component({
   selector: 'app-customers',
@@ -8,7 +8,7 @@ import { CustomerService } from 'src/app/service/customer.service';
 })
 export class CustomersComponent implements OnInit {
 
-  constructor(private customers : CustomerService) { }
+  constructor(private customers : UsersService) { }
   customerData: any;
   totalRecords : number | undefined;
   page :any = 1;

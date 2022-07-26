@@ -26,6 +26,9 @@ import { Ng2OrderModule } from 'ng2-order-pipe';
 import { Ng2PaginationModule } from 'ng2-pagination';
 import { ParentComponentComponent } from './components/parent-component/parent-component.component';
 import { ChildComponentComponent } from './components/child-component/child-component.component';
+import { SerachComponent } from './components/serach/serach.component';
+import { SerachResultComponent } from './components/serach-result/serach-result.component';
+import { ExampleComponent } from './components/example/example.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,10 @@ import { ChildComponentComponent } from './components/child-component/child-comp
     FilterMapReduceComponent,
     SortSearchComponent,
     ParentComponentComponent,
-    ChildComponentComponent
+    ChildComponentComponent,
+    SerachComponent,
+    SerachResultComponent,
+    ExampleComponent
   ],
   imports: [
     BrowserModule,

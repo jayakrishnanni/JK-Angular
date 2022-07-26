@@ -15,6 +15,7 @@ export class UsersComponent implements OnInit {
   };
   dataValue: any;
   post: any;
+  datausers: any;
   constructor( private users : UsersService) { }
 
   ngOnInit(): void {
@@ -23,12 +24,21 @@ export class UsersComponent implements OnInit {
    
 
 
-  getUserdetails() : void {
+  getUserdetails() {
     this.users.getUsers().subscribe((data: any) => {
       this.userdata = data;
+      this.users.setUserObject(this.userdata);
       console.log('this.userdata >>>' + JSON.stringify(this.userdata));
     })
+    
   }
+
+
+  getuserdetailsfromSubject() {
+    this.datausers = this.users.getUserObject();
+    console.log(this.datausers);
+  }
+
 
   getPostdetails(id: number) : void {
     this.users.getPosts().subscribe((data: any) =>{

@@ -8,7 +8,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class CommonProblemsComponent implements OnInit {
   myForm: FormGroup;
-
+  items = { keyOne: 'value 1', keyTwo: 'value 2', keyThree: 'value 3' };
   inputname: any;
   template: any;
   usersname = ['sachin'];
@@ -66,7 +66,7 @@ export class CommonProblemsComponent implements OnInit {
     //this.deleteanArray(); 
 
     // sum of an array
-    //sum()
+    //this.sum();
 
     // count   
     //this.count();
@@ -76,12 +76,157 @@ export class CommonProblemsComponent implements OnInit {
 
     // sorting of keyvaluepaid
     //this.keyValuePair();
+
+    // concat and spready operator
+    //this.concatspread();
+
+
+    // object iteration 
+    //this.objectiteration2();
+
+
+    //occurances 1
+    this.occurrence1()
+
+    //occurances 2
+    this.occurance2()
+
+    //occurances 3
+    this.occurance3()
+
+    //occurances 4
+    this.occurance4()
+
+    // updating an object key to an object
+    this.objectupdating()
+
+    // to string to an array
+    this.toNewray()
   }
+
+
+  // to string to an array
+  toNewray() {
+    const obj = { "a": 1, "b": 2, "c": 3, "d": 5, "f": 9, "g": 11, "h": 21 }
+    const newarr = new Array(obj)
+    console.log(JSON.stringify(newarr))
+  }
+
+
+  // updating an object key to an object
+
+  objectupdating() {
+    // const obj = { "a": 1, "b": 2, "c": 3, "d": 5, "f": 9, "g": 11, "h": 21 }
+    // const newObj = { "a": 4 }
+    // let keys = Object.keys(newObj)
+    // keys.map(x => {
+    //   obj[x] = newObj[x]
+    // })
+    // console.log(obj)
+  }
+
+
+  //occurance 1
+  occurrence1() {
+    //       const myArray = [false, 24, "English", false, "english", 22, 19, false, "English", 19];
+
+    //       const count = {};
+
+    //       for( i=0; i<=myArray.length; i++ ) {
+    //           count[myArray[i]] = count[myArray[i]] ? count[myArray[i]]+1: 1;
+
+    //       }
+    //       console.log(count)
+
+  }
+
+  //   occurrences1();
+
+  //occurance 2
+  occurance2() {
+    //     let sachin = 'hello';
+    //     let abc= [12,2,3,3,3,3,33,sachin];
+    //     let abcc = abc.reduce((acc, currentvalue)=>{
+    //      return (acc[currentvalue] ?  ++acc[currentvalue] :(acc[currentvalue]=1), acc)
+    //     },{})
+    //     console.log(abcc);
+  } 
+
+  //   occurance2();
+
+  //occurance 3
+  occurance3() {
+    //   let abc = [1,2,3,4,5,65,6,5,5,5,5,5,5,5,5,5,5,5,5];
+    //   let cde = abc.reduce((count,currentValue) => {
+    //       return (count[currentValue] ? ++count[currentValue] : (count[currentValue] = 1),count)
+
+    //   },{})
+    //   console.log(cde)
+  }
+
+  // occurance3()
+
+  //occurance 4
+  occurance4() {
+    //   let arr = ['hello',1,2,3,4,55,5,5,5,5,5,5,5];
+    //   let occur = arr.reduce((acc, curr)=> {
+    //      if(acc[curr]) {
+    //       acc[curr] = ++acc[curr];
+    //      }else {
+    //       acc[curr] =1;
+    //      }
+    //      return acc;
+    //   },{})
+
+    //   console.log(occur);
+  }
+
+  // occurance4();
+
+
+  // object iteration 
+  objectiteration2() {
+    // const person = {
+    //   firstName: "John",
+    //   lastName: "Doe",
+    //   id: 5566
+    // }
+
+    // const keys = Object.keys(person);
+    // console.log(keys);
+
+    // keys.forEach((key, item) => {
+    //   console.log(`${key} :  ${person[key]}`)
+    // })
+  }
+
+
+  // object iteration
+  objectiteration() {
+    let object = { idt: 2, idty: 3, idtt: 4 };
+    let keys = Object.keys(object);
+    for (var i = 0; i < keys.length; i++) {
+      //console.log(object[keys[i]]); // 2 3 4
+    }
+  }
+
+
+  // concat and spready operator
+  concatspread() {
+    //   a = [1, 2, 3]
+    //   x = 'hello';
+
+    //  console.log(a.concat(x));  // [ 1, 2, 3, 'hello' ]
+    //  console.log([...a, ...x]); // [ 1, 2, 3, 'h', 'e', 'l', 'l', 'o' ]
+  }
+
 
   // to sort a string
   toSortAString() {
     const names = ["sachin", "dipin", "kunson"];
     console.log(names.sort())
+
+    // answer ["dipin", "kunson", "sachin"]
   }
 
   // concat - adding two arrays
@@ -116,6 +261,7 @@ export class CommonProblemsComponent implements OnInit {
       }
     }
     console.log(min)
+    //answer 1
   }
 
   // maximum of a number
@@ -128,14 +274,16 @@ export class CommonProblemsComponent implements OnInit {
         max = number[i];
       }
     }
-
     console.log(max)
+    //answer 76
   }
 
   // string length
   stringLength() {
     var keyvalue = "hello";
     console.log(keyvalue.length)
+
+    //answer 5
   }
 
 
@@ -145,7 +293,7 @@ export class CommonProblemsComponent implements OnInit {
       { id: 1, color: 'black' },
       { id: 4545, color: 'black' },
       { id: 4, color: 'black' },
-      { id: 6534, color: 'black' },
+      { id: 6534, color: 'black' }
     ];
     keyvalue.push({ id: 9999, color: "pink" })
     console.log(JSON.stringify(keyvalue));
@@ -157,7 +305,7 @@ export class CommonProblemsComponent implements OnInit {
       { id: 1, color: 'black' },
       { id: 4545, color: 'black' },
       { id: 4, color: 'black' },
-      { id: 6534, color: 'black' },
+      { id: 6534, color: 'black' }
     ];
     var keyvaluesort = keyvalue.sort((a, b) => a.id - b.id);
     console.log(JSON.stringify(keyvaluesort));
@@ -211,6 +359,11 @@ export class CommonProblemsComponent implements OnInit {
     var string = "Hello Namaste"
     var revsere = string.split('').reverse().join('');
     console.log('reverse a string ' + string + ' ' + revsere);
+
+    //     var keyvalue = "hello";
+    // var lengthstring = keyvalue.length;
+    // var reverse = keyvalue.split('').reverse().join('');
+    // console.log(reverse);
   }
 
 
@@ -355,6 +508,16 @@ export class CommonProblemsComponent implements OnInit {
     console.log('type of [] is ' + typeof ([]))
     console.log('type of {} is ' + typeof ({}))
     console.log('type of "" is ' + typeof (""))
+
+
+
+    // type of 1 is number
+    // type of "1" is string
+    // type of NaN is number
+    // type of false is boolean
+    // type of [] is object
+    // type of {} is object
+    // type of "" is string
   }
 
 
@@ -390,7 +553,20 @@ export class CommonProblemsComponent implements OnInit {
     let sum = 0;
     var arraysum = array.forEach((item) => (sum += item));
     console.log(sum);
+
+    // result 21
   }
+
+  sumusingReduce() {
+  var array = [1, 2, 3, 4, 5, 6];
+var sum = array.reduce((acc,curr) =>{
+      acc= acc+ curr;
+      return acc;
+})
+console.log(JSON.stringify(sum))
+// result 21
+  }
+
 
 
 

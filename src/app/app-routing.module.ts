@@ -18,6 +18,9 @@ import { FilterMapReduceComponent } from './components/filter-map-reduce/filter-
 import { SortSearchComponent } from './components/sort-search/sort-search.component';
 import { ParentComponentComponent } from './components/parent-component/parent-component.component';
 import { ChildComponentComponent } from './components/child-component/child-component.component';
+import { SerachComponent } from './components/serach/serach.component';
+import { SerachResultComponent } from './components/serach-result/serach-result.component';
+import { ExampleComponent } from './components/example/example.component';
 
 
 const routes: Routes = [
@@ -38,7 +41,10 @@ const routes: Routes = [
   {path: 'sortfilter', component: SortSearchComponent},
   {path: 'parantclear', component: ParentComponentComponent},
   {path: 'child', component: ChildComponentComponent},
-  
+  {path: 'search', component: SerachComponent},
+  {path: 'search/:result', component: SerachResultComponent},
+  {path: 'example', component: ExampleComponent},
+
   {path: '**', component: ErrorpageComponent}
   
 ];
