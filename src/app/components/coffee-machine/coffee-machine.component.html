@@ -1,0 +1,18 @@
+<ul>
+    <li *ngFor="let coffee of coffees">
+       <a type="submit" (click)="coffeeSelection(coffee)"> {{coffee.type}} </a>
+       <div *ngIf="coffee.selected"> 
+        <label>content</label>
+        <ul>
+           <li *ngFor="let content of coffee.content; let i= index"> 
+               {{content.contenttype}}
+            <a (click)="minus(coffeeQty, content);">-</a>
+            <input type="number" [(ngModel)]="coffeeQty">
+            <a (click)="plus(coffeeQty, content);">+</a>
+        </li>
+        </ul>
+        
+    </div>
+    </li>
+</ul>
+

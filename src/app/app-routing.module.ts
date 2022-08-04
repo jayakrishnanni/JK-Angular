@@ -21,6 +21,7 @@ import { ChildComponentComponent } from './components/child-component/child-comp
 import { SerachComponent } from './components/serach/serach.component';
 import { SerachResultComponent } from './components/serach-result/serach-result.component';
 import { ExampleComponent } from './components/example/example.component';
+import { CoffeeMachineComponent } from './components/coffee-machine/coffee-machine.component';
 
 
 const routes: Routes = [
@@ -44,6 +45,8 @@ const routes: Routes = [
   {path: 'search', component: SerachComponent},
   {path: 'search/:result', component: SerachResultComponent},
   {path: 'example', component: ExampleComponent},
+  {path: 'coffee', component: CoffeeMachineComponent},
+  
 
   {path: '**', component: ErrorpageComponent}
   

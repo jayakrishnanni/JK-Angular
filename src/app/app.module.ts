@@ -29,6 +29,7 @@ import { ChildComponentComponent } from './components/child-component/child-comp
 import { SerachComponent } from './components/serach/serach.component';
 import { SerachResultComponent } from './components/serach-result/serach-result.component';
 import { ExampleComponent } from './components/example/example.component';
+import { CoffeeMachineComponent } from './components/coffee-machine/coffee-machine.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { ExampleComponent } from './components/example/example.component';
     ChildComponentComponent,
     SerachComponent,
     SerachResultComponent,
-    ExampleComponent
+    ExampleComponent,
+    CoffeeMachineComponent
   ],
   imports: [
     BrowserModule,

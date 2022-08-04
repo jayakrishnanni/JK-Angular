@@ -27,8 +27,10 @@ export class ExampleComponent implements OnInit {
  postdataCall(id: any) {
   this.postData.filter((items:any)=> {
       if(id == items.id) {
-        this.objectvalue = items.id;
+        this.objectvalue = items;
         console.log('hello'  + JSON.stringify(this.objectvalue));
+      }else {
+        console.log("helloeee")
       }
   })
  }
