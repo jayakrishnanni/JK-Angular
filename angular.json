@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Fingent-Assesment-Test": {
+    "Chipmunk-Platform-Test": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/fingent-assesment-test",
+            "outputPath": "dist/chipmunk-platform-test",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -39,7 +39,7 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
+                  "maximumWarning": "1mb",
                   "maximumError": "1mb"
                 },
                 {
@@ -71,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Fingent-Assesment-Test:build:production"
+              "browserTarget": "Chipmunk-Platform-Test:build:production"
             },
             "development": {
-              "browserTarget": "Fingent-Assesment-Test:build:development"
+              "browserTarget": "Chipmunk-Platform-Test:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Fingent-Assesment-Test:build"
+            "browserTarget": "Chipmunk-Platform-Test:build"
           }
         },
         "test": {
@@ -106,5 +106,5 @@
       }
     }
   },
-  "defaultProject": "Fingent-Assesment-Test"
+  "defaultProject": "Chipmunk-Platform-Test"
 }

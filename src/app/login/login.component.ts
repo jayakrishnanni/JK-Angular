@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
     this.errorMsg = 'Please enter username and password'
     }
      if(data) {
-       if(this.loginForm.value.username == 'fingent' && this.loginForm.value.password == 'fingent'){
+       if(this.loginForm.value.username == 'admin' && this.loginForm.value.password == 'password'){
          this.router.navigate(['/dashboard']);
        }
        else {
