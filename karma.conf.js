@@ -25,7 +25,11 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
+<<<<<<< HEAD
       dir: require('path').join(__dirname, './coverage/chipmunk-platform-test'),
+=======
+      dir: require('path').join(__dirname, './coverage/chipmunk-assesment-test'),
+>>>>>>> origin
       subdir: '.',
       reporters: [
         { type: 'html' },

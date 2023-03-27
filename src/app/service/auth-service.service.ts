@@ -12,9 +12,23 @@ export class AuthServiceService {
 
   constructor(private http: HttpClient) { }
 
+  islogged = false;
+
+  login() {
+    this.islogged = true;
+  }
+
+  logout() {
+    this.islogged = false;
+  }
+
+  isAuthenticated() {
+   return this.islogged; 
+  }
+
   // Use https://corona.lmao.ninja/v2/all API to
 
-  getDashboard() {
+  getDashboard() : Observable<any> {
     return this.http.get<any>('https://corona.lmao.ninja/v2/all',{})
       .pipe(
         tap(data => {

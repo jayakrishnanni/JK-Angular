@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-div#covid-19-outlets .container,
-div#covid-19-outlets .container-lg,
-div#covid-19-outlets .container-md,
-div#covid-19-outlets .container-sm,
-div#covid-19-outlets .container-xl {
+div#chipmunk-outlets .container,
+div#chipmunk-outlets .container-lg,
+div#chipmunk-outlets .container-md,
+div#chipmunk-outlets .container-sm,
+div#chipmunk-outlets .container-xl {
   max-width: 100%;
 }

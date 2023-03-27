@@ -1,0 +1,51 @@
+<div id="chipmunk-dashboard">
+  <div class="container">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="row">
+        <div class="col-md-1">
+          <app-sidebar></app-sidebar>
+        </div>
+          <div class="col-md-10"  *ngIf="chipmunkDataStatus">
+           <div class="col-md-12">
+             <h1>Total</h1>
+           </div>
+           <div class="col-md-12">
+             <div class="col-md-4 sections">
+               <label>Total Cases</label>
+               <span>{{cases}}</span>
+             </div>
+             <div class="col-md-4 sections">
+               <label>Total Deaths</label>
+               <span>{{deaths}}</span>
+             </div>
+             <div class="col-md-4 sections">
+               <label>Total Recovered</label>
+               <span>{{recovered}}</span>
+             </div>
+           </div>
+           <div class="col-md-12">
+            <h1>Today</h1>
+          </div>
+           <div class="col-md-12">
+            <div class="col-md-4 sections">
+              <label>Cases</label>
+              <span>{{todayCases}}</span>
+            </div>
+            <div class="col-md-4 sections">
+              <label>Deaths</label>
+              <span>{{todayDeaths}}</span>
+            </div>
+            <div class="col-md-4 sections">
+              <label>Recovered</label>
+              <span>{{todayRecovered}}</span>
+            </div>
+          </div>
+          </div>
+          <div class="col-md-10" *ngIf="!chipmunkDataStatus">
+             {{chipmunkDataStatusMsg}}
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+

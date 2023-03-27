@@ -1,0 +1,23 @@
+<div id="chipmunk-login">
+   <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+        <div class="col-md-6">
+<<<<<<< HEAD:src/app/login/login.component.html
+          <h1 class="login-heading">Chipmunk</h1>
+=======
+          <h1>Welcome to Chipmunk Platform </h1>
+>>>>>>> origin:src/app/components/login/login.component.html
+        </div>
+        <div class="col-md-6">
+           <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+             <h3>{{errorMsg}}</h3>
+             <input type="text" formControlName="username" placeholder="USERNAME">
+             <input type="password" formControlName="password" placeholder="PASSWORD">
+             <button type="submit" class="login-btn" [disabled]="loginForm.invalid">Login</button>
+           </form>
+        </div>
+       </div>
+     </div>
+   </div>
+</div>

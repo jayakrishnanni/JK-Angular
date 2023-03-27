@@ -1,0 +1,18 @@
+<p>table works!</p>
+<button (click)="getUserdetails()">call the user</button>
+<table *ngIf="userdata">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>Status</th>
+    </tr>
+    <tr *ngFor="let userdata of userdata | async">
+        <td>{{userdata.id}}</td>
+        <td>{{userdata.name}}</td>
+        <td>{{userdata.email}}</td>
+        <td>{{userdata.gender}}</td>
+        <td>{{userdata.status}}</td>
+    </tr>
+</table>

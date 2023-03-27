@@ -1,0 +1,80 @@
+#chipmunk-countries .head-section img {
+  width: 30px;
+  height: auto;
+}
+#chipmunk-countries .body-section {
+  display: flex;
+}
+#chipmunk-countries .foot-section {
+  display: flex;
+}
+#chipmunk-countries  .sections {
+   border: 1px solid black;
+   margin-top: 20px;
+   margin-right: 10px;
+   margin-left: 10px;
+   margin-bottom: 60px;
+   padding: 22px;
+   text-align: center;
+   box-shadow: 0 0 0 1px #1870f0;
+   border-radius: 4px;
+ }
+#chipmunk-countries .head-section {
+  text-align: left;
+}
+#chipmunk-countries .col-md-4 {
+  flex: 0 0 auto;
+  width: 31%;
+  position: relative;
+  display: inline-block;
+}
+#chipmunk-countries h1 {
+  border-bottom: 2px solid #ddd;
+}
+#chipmunk-countries .sections {
+  border: 1px solid black;
+  margin-top: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 60px;
+  padding: 22px;
+  text-align: center;
+  box-shadow: 0 0 0 1px #1870f0;
+  border-radius: 4px;
+}
+#chipmunk-countries .sections span {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: #297af1;
+}
+#chipmunk-countries .sections  label {
+  font-family: roboto;
+  color: #297af1;
+  font-weight: 400;
+  font-size: 12px;
+}
+#chipmunk-countries .section-1 {
+  width: 33.33%;
+  text-align: left;
+}
+#chipmunk-countries .section-2 {
+  width: 33.33%;
+  text-align: left;
+}
+#chipmunk-countries .section-3 {
+  width: 33.33%;
+  text-align: left;
+}
+#chipmunk-countries .head-section label {
+  font-size: 20px !important;
+  padding: 0 15px;
+}
+#chipmunk-countries  .section-3 span.material-icons {
+  margin: 20px 25px;
+  border: 1px solid #ddd;
+  padding: 2px;
+  border-radius: 50%;
+  box-shadow: 0px 1px 3px 2px black;
+}
+

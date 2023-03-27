@@ -1,0 +1,33 @@
+ul.dashborad-sidebar li {
+  list-style: none;
+}
+ul.dashborad-sidebar {
+  position: sticky;
+  height: 35em;
+  width: 50px;
+  background: blue;
+}
+ul.dashborad-sidebar li  a {
+  color: #ffffff;
+}
+#chipmunk-sidebar {
+  border-radius: 4px;
+  background: blue;
+  color: white;
+  width: 70px;
+  height: 36em;
+  margin: 10px 0;
+}
+span.material-icons:nth-child(3) {
+  margin-top: 20em;
+}
+span.material-icons:nth-child(1),
+span.material-icons:nth-child(2) {
+  padding: 20px 0;
+}
+#chipmunk-sidebar a {
+  color: #ffffff;
+}
+#chipmunk-sidebar a {
+  color: #ffffff;
+}
