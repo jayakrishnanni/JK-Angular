@@ -6,7 +6,11 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+<<<<<<< HEAD
+    "Chipmunk-Platform-Test": {
+=======
     "Chipmunk-Assesment-Test": {
+>>>>>>> origin
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -20,7 +24,11 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+<<<<<<< HEAD
+            "outputPath": "dist/chipmunk-platform-test",
+=======
             "outputPath": "dist/chipmunk-assesment-test",
+>>>>>>> origin
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -42,7 +50,7 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
+                  "maximumWarning": "1mb",
                   "maximumError": "1mb"
                 },
                 {
@@ -74,10 +82,17 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
+<<<<<<< HEAD
+              "browserTarget": "Chipmunk-Platform-Test:build:production"
+            },
+            "development": {
+              "browserTarget": "Chipmunk-Platform-Test:build:development"
+=======
               "browserTarget": "Chipmunk-Assesment-Test:build:production"
             },
             "development": {
               "browserTarget": "Chipmunk-Assesment-Test:build:development"
+>>>>>>> origin
             }
           },
           "defaultConfiguration": "development"
@@ -85,7 +100,11 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
+<<<<<<< HEAD
+            "browserTarget": "Chipmunk-Platform-Test:build"
+=======
             "browserTarget": "Chipmunk-Assesment-Test:build"
+>>>>>>> origin
           }
         },
         "test": {
@@ -109,5 +128,9 @@
       }
     }
   },
+<<<<<<< HEAD
+  "defaultProject": "Chipmunk-Platform-Test"
+=======
   "defaultProject": "Chipmunk-Assesment-Test"
+>>>>>>> origin
 }

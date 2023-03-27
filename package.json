@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
+  "name": "nt-assesment-tesfinget",
+=======
   "name": "chipmunk-assesment-test",
+>>>>>>> origin
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
