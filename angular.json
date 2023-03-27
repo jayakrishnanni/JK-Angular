@@ -1,22 +1,11 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "cli": {
-    "analytics": false
-  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-<<<<<<< HEAD
-    "Chipmunk-Platform-Test": {
-=======
-    "Chipmunk-Assesment-Test": {
->>>>>>> origin
+    "chipmunk-platform": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:application": {
-          "strict": true
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -24,45 +13,34 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-<<<<<<< HEAD
-            "outputPath": "dist/chipmunk-platform-test",
-=======
-            "outputPath": "dist/chipmunk-assesment-test",
->>>>>>> origin
+            "outputPath": "dist/chipmunk-platform",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "src/styles.css"
             ],
-            "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "1mb",
+                  "maximumWarning": "500kb",
                   "maximumError": "1mb"
                 },
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kb",
                   "maximumError": "4kb"
-                }
-              ],
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
                 }
               ],
               "outputHashing": "all"
@@ -82,17 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-<<<<<<< HEAD
-              "browserTarget": "Chipmunk-Platform-Test:build:production"
+              "browserTarget": "chipmunk-platform:build:production"
             },
             "development": {
-              "browserTarget": "Chipmunk-Platform-Test:build:development"
-=======
-              "browserTarget": "Chipmunk-Assesment-Test:build:production"
-            },
-            "development": {
-              "browserTarget": "Chipmunk-Assesment-Test:build:development"
->>>>>>> origin
+              "browserTarget": "chipmunk-platform:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -100,26 +71,22 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-<<<<<<< HEAD
-            "browserTarget": "Chipmunk-Platform-Test:build"
-=======
-            "browserTarget": "Chipmunk-Assesment-Test:build"
->>>>>>> origin
+            "browserTarget": "chipmunk-platform:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
             "tsConfig": "tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -128,9 +95,7 @@
       }
     }
   },
-<<<<<<< HEAD
-  "defaultProject": "Chipmunk-Platform-Test"
-=======
-  "defaultProject": "Chipmunk-Assesment-Test"
->>>>>>> origin
+  "cli": {
+    "analytics": "ce09e7fc-d424-4f57-b48e-248a95b5cad4"
+  }
 }

@@ -1,3 +1,0 @@
-1>>> in sort-search component- sortby, pagination and filter must done   - not completed
-2>>> leela course
-3>>> namaste javascript

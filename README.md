@@ -1,14 +1,6 @@
-<<<<<<< HEAD
-# Chipmunk
-=======
-# Chipmunk Assesment Test
->>>>>>> origin
+# ChipmunkPlatform
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
-
-## Dependency Install
-
-Do `npm install` before starting this server.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
 
 ## Development server
 
