@@ -7,7 +7,7 @@
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <div class="row">
         <div class="col-md-1">
-          <app-sidebar></app-sidebar>
+          <!-- <app-sidebar></app-sidebar> -->
         </div>
         <div class="col-md-11"  *ngIf="chipmunkCountryDataStatus">
                     <div class="col-md-12">
@@ -44,12 +44,17 @@
                             <span>{{chipmunkCountry.deaths}}</span>
                           </div>
                           <div class="section-3">
-                            <label><a [routerLink]="['edit',chipmunkCountry?.countryInfo?._id]"><span class="material-icons">edit</span></a></label>
+                            <!-- <label>
+                              <a [routerLink]="['edit',chipmunkCountry?.countryInfo?._id]">
+                                <span class="material-icons">edit</span>
+                              </a>
+                            </label> -->
                           </div>
                         </div>
                       </div>
                     </div>
-          <pagination-controls (pageChange)="page = $event"></pagination-controls></div>
+          <!-- <pagination-controls (pageChange)="page = $event"></pagination-controls> -->
+        </div>
         <div class="col-md-12" *ngIf="!chipmunkCountryDataStatus">
           {{chipmunkCountryDataStatusMsg}}
         </div>
