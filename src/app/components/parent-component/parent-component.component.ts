@@ -2,22 +2,21 @@ import { AfterViewInit, Component, OnInit, ViewChild, ChangeDetectorRef } from '
 import { ChildComponentComponent } from '../child-component/child-component.component';
 
 @Component({
-  selector: 'app-parent-component',
-  templateUrl: './parent-component.component.html',
-  styleUrls: ['./parent-component.component.css'],
+    selector: 'app-parent-component',
+    templateUrl: './parent-component.component.html',
+    styleUrls: ['./parent-component.component.css'],
 })
 export class ParentComponentComponent implements OnInit, AfterViewInit {
-  message: string;
-  constructor(private cd: ChangeDetectorRef) { }
+    message: string | undefined;
+    constructor(private cd: ChangeDetectorRef) { }
 
-  ngOnInit(): void {
-
-    this.message = "hello"
-  }
-  @ViewChild(ChildComponentComponent) child !: ChildComponentComponent;
-  ngAfterViewInit() {
-    this.cd.detectChanges();
-    console.log(this.child.childData)
-  }
+    ngOnInit(): void {
+        this.message = "hello"
+    }
+    @ViewChild(ChildComponentComponent) child !: ChildComponentComponent;
+    ngAfterViewInit() {
+        this.cd.detectChanges();
+        console.log(this.child.childData)
+    }
 
 }

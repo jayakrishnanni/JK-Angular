@@ -7,7 +7,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./forms.component.css']
 })
 export class FormsComponent implements OnInit {
-  myForm: FormGroup
+  myForm !: FormGroup<{ user: FormControl<string | null>; }>;
   constructor() { }
 
   ngOnInit(): void {

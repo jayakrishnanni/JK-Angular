@@ -39,7 +39,7 @@ export class CountriesComponent implements OnInit {
   ngOnInit() {
     this.igame = {
       gameId: 123,
-      gameName!: 'abc',
+      gameName: 'abc',
       gameCode: 'abc',
       releaseDate: 'abc',
       price: 123,

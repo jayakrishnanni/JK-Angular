@@ -7,11 +7,11 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./common-problems.component.css']
 })
 export class CommonProblemsComponent implements OnInit {
-  myForm: FormGroup;
   items = { keyOne: 'value 1', keyTwo: 'value 2', keyThree: 'value 3' };
   inputname: any;
   template: any;
   usersname = ['sachin'];
+  myForm!: FormGroup<{ check: FormControl<string | null>; }>;
   constructor() { }
 
   ngOnInit(): void {

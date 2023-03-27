@@ -38,22 +38,14 @@ import { CoffeeMachineComponent } from './components/coffee-machine/coffee-machi
     ErrorpageComponent,
     DashboardComponent,
     CountriesComponent,
-    SidebarComponent,
     EditDetailsComponent,
-    UsersComponent,
-    CustomersComponent,
     CommonProblemsComponent,
     FormgroupComponent,
     FormsComponent,
-    TableComponent,
     CallApplyBindComponent,
     FilterMapReduceComponent,
-    SortSearchComponent,
     ParentComponentComponent,
     ChildComponentComponent,
-    SerachComponent,
-    SerachResultComponent,
-    ExampleComponent,
     CoffeeMachineComponent
   ],
   imports: [
@@ -62,9 +54,7 @@ import { CoffeeMachineComponent } from './components/coffee-machine/coffee-machi
     ReactiveFormsModule,
     FormsModule,
     NgxPaginationModule,
-    HttpClientModule,
-    Ng2SearchPipeModule
-    // Ng2OrderModule
+    HttpClientModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

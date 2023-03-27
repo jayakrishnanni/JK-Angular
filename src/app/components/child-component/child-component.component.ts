@@ -8,12 +8,12 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ChildComponentComponent implements OnInit {
    childData : any = "Data from child component "
-   messages: string;
+  
    
   constructor() { }
 
   ngOnInit(): void {
-    console.log('hello' + this.messages)
+    console.log('hello')
   }
  
 

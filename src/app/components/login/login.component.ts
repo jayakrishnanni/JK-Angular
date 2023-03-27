@@ -12,8 +12,9 @@ import { Router} from '@angular/router';
 export class LoginComponent implements OnInit {
   
   errorMsg: string | any;
+  loginForm !: FormGroup<{ username: FormControl<string | null>; password: FormControl<string | null>; }> ;
 
-  loginForm: FormGroup;
+
 
   constructor(private authService : AuthServiceService,
               private router: Router,
@@ -33,12 +34,7 @@ export class LoginComponent implements OnInit {
     this.errorMsg = 'Please enter username and password'
     }
      if(data) {
-<<<<<<< HEAD:src/app/login/login.component.ts
        if(this.loginForm.value.username == 'admin' && this.loginForm.value.password == 'password'){
-=======
-       if(this.loginForm.value.username == 'chipmunk' && this.loginForm.value.password == 'chipmunk'){
-        this.authService.login();
->>>>>>> origin:src/app/components/login/login.component.ts
          this.router.navigate(['/dashboard']);
        }
        else {

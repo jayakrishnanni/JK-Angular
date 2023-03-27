@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthServiceService } from 'src/app/service/auth-service.service';
+import { AuthServiceService } from 'app/service/auth-service.service';
 
 @Component({
   selector: 'app-sidebar',
