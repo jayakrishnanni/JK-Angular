@@ -10,7 +10,7 @@ import { Users } from '../users';
 })
 export class UsersService {
   private userObject = new BehaviorSubject<any>(null);
-  public readonly $userObject: Observable<any> =this.userObject.asObservable();
+  public readonly $userObject: Observable<any> = this.userObject.asObservable();
 
   constructor( private  http : HttpClient) { }
   setUserObject(user: any) {
@@ -35,8 +35,6 @@ export class UsersService {
      return this.http.get<any>('https://gorest.co.in/public/v2/posts')
   }
 
-
-
   url: string ="http://localhost:3000/Users";
 
   getUserDetails(): any {
@@ -47,4 +45,8 @@ export class UsersService {
     var customervalues = '../../assets/api/customers.json'
     return this.http.get<any>(customervalues)
   }
+
+  // getLoginUserDetails() :Observable<any> {
+  //   return this.http.get<any>(customervalues)
+  // }
 }

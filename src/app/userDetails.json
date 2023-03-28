@@ -1,0 +1,19 @@
+{
+    "userDetails": [
+        {
+            "username": "admin",
+            "password": "password",
+            "userType": "productOwner"
+        },
+        {
+            "username": "accountant",
+            "password": "password",
+            "userType": "accountant"
+        },
+        {
+            "username": "credit",
+            "password": "password",
+            "userType": "creditOfficer"
+        }
+    ]
+}
