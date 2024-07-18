@@ -1,0 +1,27 @@
+const A = [
+  { id: 1, name: "Object A1", selected: false },
+  { id: 2, name: "Object A2", selected: true },
+  { id: 3, name: "Object A3", selected: false },
+  { id: 4, name: "Object A4", selected: true },
+  { id: 5, name: "Object A5", selected: false }
+];
+
+const B = [
+  { id: 3, name: "Object B1", selected: false },
+  { id: 6, name: "Object B2", selected: true },
+  { id: 7, name: "Object B3", selected: false },
+  { id: 8, name: "Object B4", selected: true },
+  { id: 9, name: "Object B5", selected: false },
+  { id: 10, name: "Object B6", selected: true }
+];
+
+// Create a set of ids from array A to avoid duplicates
+const idsInA = new Set(A.map(obj => obj.id));
+
+// Filter out objects in B that are already in A based on id
+const filteredB = B.filter(obj => !idsInA.has(obj.id));
+
+// Concatenate A and the filtered B
+const concatenatedArray = A.concat(filteredB);
+
+console.log(concatenatedArray);
