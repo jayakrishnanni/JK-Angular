@@ -1,0 +1,30 @@
+interface Item {
+  id: number;
+  name: string;
+  priority: number;
+}
+
+const items: Item[] = [
+  { id: 1, name: 'Item A', priority: 2 },
+  { id: 2, name: 'Item B', priority: 1 },
+  { id: 3, name: 'Item C', priority: 3 }
+];
+
+// Function to reorder properties in the object
+function reorderProperties(obj: Item, order: string[]): any {
+  const reorderedObj: any = {};
+  order.forEach(field => {
+    if (field in obj) {
+      reorderedObj[field] = obj[field];
+    }
+  });
+  return reorderedObj;
+}
+
+// Define the desired property order
+const propertyOrder = ['name', 'id', 'priority'];
+
+// Process the array
+const reorderedItems = items.map(item => reorderProperties(item, propertyOrder));
+
+console.log(reorderedItems);
