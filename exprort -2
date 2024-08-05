@@ -1,0 +1,52 @@
+import * as XLSX from 'xlsx';
+
+interface Item {
+  id: number;
+  name: string;
+  priority: number | null; // Handle null values
+}
+
+const items: Item[] = [
+  { id: 1, name: 'Item A', priority: 2 },
+  { id: 2, name: '', priority: 1 },
+  { id: 3, name: 'Item C', priority: null }
+];
+
+// Function to reorder properties in an object, prioritizing non-empty fields
+function reorderProperties(obj: Item, order: string[]): any {
+  const reorderedObj: any = {};
+  
+  // Add non-empty fields first
+  order.forEach(field => {
+    if (obj[field] !== undefined && obj[field] !== null && obj[field] !== '') {
+      reorderedObj[field] = obj[field];
+    }
+  });
+
+  // Add remaining fields (including empty ones)
+  order.forEach(field => {
+    if (!(field in reorderedObj)) {
+      reorderedObj[field] = obj[field];
+    }
+  });
+
+  return reorderedObj;
+}
+
+// Define the desired property order
+const propertyOrder = ['name', 'id', 'priority'];
+
+// Process the array to reorder fields
+const reorderedItems = items.map(item => reorderProperties(item, propertyOrder));
+
+// Create a worksheet and a workbook
+const ws = XLSX.utils.json_to_sheet(reorderedItems);
+const wb = XLSX.utils.book_new();
+
+// Append the worksheet to the workbook
+XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+
+// Write the workbook to a file
+XLSX.writeFile(wb, 'output.xlsx');
+
+console.log('Excel file created successfully!');
