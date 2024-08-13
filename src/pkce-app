@@ -1,0 +1,56 @@
+import { Component } from '@angular/core';
+import { PkceService } from './pkce.service';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  constructor(private pkceService: PkceService) {}
+
+  async ngOnInit() {
+    const codeVerifier = this.pkceService.generateCodeVerifier();
+    const codeChallenge = await this.pkceService.generateCodeChallenge(codeVerifier);
+
+    // Store the codeVerifier in sessionStorage or another secure location
+    sessionStorage.setItem('codeVerifier', codeVerifier);
+
+    // Build the authorization URL
+    const authorizationUrl = this.buildAuthorizationUrl(codeChallenge);
+
+    // Redirect the user to the authorization endpoint
+    window.location.href = authorizationUrl;
+  }
+
+  buildAuthorizationUrl(codeChallenge: string): string {
+    const clientId = 'YOUR_CLIENT_ID';
+    const redirectUri = 'https://your-app.com/login/callback';
+    const responseType = 'code';
+    const scope = 'openid profile email';
+    const state = this.generateRandomString(16); // Random state value to protect against CSRF attacks
+    const codeChallengeMethod = 'S256';
+
+    const params = new URLSearchParams({
+      response_type: responseType,
+      client_id: clientId,
+      redirect_uri: redirectUri,
+      scope: scope,
+      state: state,
+      code_challenge: codeChallenge,
+      code_challenge_method: codeChallengeMethod,
+    });
+
+    return `https://your-okta-domain.com/oauth2/default/v1/authorize?${params.toString()}`;
+  }
+
+  generateRandomString(length: number): string {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+    for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * characters.length);
+      result += characters.charAt(randomIndex);
+    }
+    return result;
+  }
+}
