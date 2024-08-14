@@ -1,0 +1,32 @@
+private generateRandomString(length: number): string {
+  const charset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let result = '';
+  const values = new Uint32Array(length);
+  window.crypto.getRandomValues(values);
+  for (let i = 0; i < length; i++) {
+    result += charset[values[i] % charset.length];
+  }
+  return result;
+}
+
+async initiateAuth() {
+  const state = this.generateRandomString(16);
+  sessionStorage.setItem('auth_state', state);
+
+  const codeVerifier = this.generateCodeVerifier();
+  const codeChallenge = await this.generateCodeChallenge(codeVerifier);
+
+  sessionStorage.setItem('code_verifier', codeVerifier);
+
+  const params = new HttpParams()
+    .set('response_type', 'code')
+    .set('client_id', this.clientId)
+    .set('redirect_uri', this.redirectUri)
+    .set('scope', 'openid profile email')
+    .set('state', state)  // Store state in the auth request
+    .set('code_challenge', codeChallenge)
+    .set('code_challenge_method', 'S256');
+
+  // Redirect to Okta authorization endpoint
+  window.location.href = `${this.authorizationEndpoint}?${params.toString()}`;
+}
