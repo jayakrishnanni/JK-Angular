@@ -1,0 +1,88 @@
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { Router } from '@angular/router';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class AuthService {
+  private clientId = '{yourClientId}';
+  private redirectUri = '{yourRedirectUri}';
+  private authorizationEndpoint = 'https://{yourOktaDomain}/oauth2/default/v1/authorize';
+  private tokenEndpoint = 'https://{yourOktaDomain}/oauth2/default/v1/token';
+
+  constructor(private http: HttpClient, private router: Router) {}
+
+  // Function to check if user is authenticated
+  isAuthenticated(): boolean {
+    return !!localStorage.getItem('access_token');
+  }
+
+  // Function to initiate authorization
+  async initiateAuth() {
+    const codeVerifier = this.generateCodeVerifier();
+    const codeChallenge = await this.generateCodeChallenge(codeVerifier);
+
+    sessionStorage.setItem('code_verifier', codeVerifier);
+
+    const params = new HttpParams()
+      .set('response_type', 'code')
+      .set('client_id', this.clientId)
+      .set('redirect_uri', this.redirectUri)
+      .set('scope', 'openid profile email')
+      .set('code_challenge', codeChallenge)
+      .set('code_challenge_method', 'S256');
+
+    // Redirect to Okta authorization endpoint
+    window.location.href = `${this.authorizationEndpoint}?${params.toString()}`;
+  }
+
+  // Function to handle the callback after authorization
+  async handleAuthCallback() {
+    const code = new URL(window.location.href).searchParams.get('code');
+    const codeVerifier = sessionStorage.getItem('code_verifier');
+
+    if (code && codeVerifier) {
+      const headers = new HttpHeaders({
+        'Content-Type': 'application/x-www-form-urlencoded',
+      });
+
+      const body = new HttpParams()
+        .set('grant_type', 'authorization_code')
+        .set('code', code)
+        .set('redirect_uri', this.redirectUri)
+        .set('client_id', this.clientId)
+        .set('code_verifier', codeVerifier);
+
+      try {
+        const response = await this.http.post<any>(this.tokenEndpoint, body.toString(), { headers }).toPromise();
+        // Store tokens in local storage or session storage
+        localStorage.setItem('access_token', response.access_token);
+        localStorage.setItem('id_token', response.id_token);
+        // Redirect to home or another route
+        this.router.navigate(['/home']);
+      } catch (error) {
+        console.error('Token exchange failed:', error);
+      }
+    }
+  }
+
+  // Generates a code verifier for PKCE
+  private generateCodeVerifier(): string {
+    const array = new Uint32Array(56 / 2);
+    window.crypto.getRandomValues(array);
+    return btoa(String.fromCharCode(...array))
+      .replace(/\+/g, '-')
+      .replace(/\//g, '_')
+      .replace(/=+$/, '');
+  }
+
+  // Generates a code challenge for PKCE
+  private async generateCodeChallenge(codeVerifier: string): Promise<string> {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(codeVerifier);
+    const hash = await crypto.subtle.digest('SHA-256', data);
+    const base64String = btoa(String.fromCharCode(...new Uint8Array(hash)));
+    return base64String.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  }
+}
