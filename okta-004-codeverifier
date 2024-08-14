@@ -1,0 +1,18 @@
+private generateCodeVerifier(): string {
+  const array = new Uint32Array(56 / 2);
+  window.crypto.getRandomValues(array);
+  
+  const base64 = this.base64UrlEncode(array);
+  return base64;
+}
+
+// Helper method to encode the Uint8Array to a Base64-encoded string
+private base64UrlEncode(array: Uint32Array): string {
+  const byteString = String.fromCharCode(...new Uint8Array(array.buffer));
+  
+  // Convert the string to a binary string before encoding
+  const binaryString = btoa(unescape(encodeURIComponent(byteString)));
+  
+  // Base64url encode it
+  return binaryString.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+}
