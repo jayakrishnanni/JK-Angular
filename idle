@@ -1,0 +1,97 @@
+import { Component } from '@angular/core';
+import { Idle, DEFAULT_INTERRUPTSOURCES } from '@ng-idle/core';
+import { Keepalive } from '@ng-idle/keepalive';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html'
+})
+export class AppComponent {
+  idleState = 'Not started.';
+  timedOut = false;
+  lastPing?: Date = null;
+
+  constructor(private idle: Idle, private keepalive: Keepalive) {
+    // Set idle time in seconds (e.g., 5 minutes)
+    idle.setIdle(300);
+    
+    // Set timeout period in seconds (e.g., 1 minute)
+    idle.setTimeout(60);
+    
+    // Interrupt sources (user activity will reset the idle timer)
+    idle.setInterrupts(DEFAULT_INTERRUPTSOURCES);
+
+    // If the user becomes idle
+    idle.onIdleEnd.subscribe(() => this.idleState = 'No longer idle.');
+
+    // If the user has been idle for the timeout period
+    idle.onTimeout.subscribe(() => {
+      this.idleState = 'Timed out!';
+      this.timedOut = true;
+      // Trigger the popup or modal for session timeout
+      this.showPopup();
+    });
+
+    // When idle starts
+    idle.onIdleStart.subscribe(() => this.idleState = 'You\'ve gone idle!');
+
+    // Countdown while idle
+    idle.onTimeoutWarning.subscribe((countdown) => 
+      this.idleState = 'You will time out in ' + countdown + ' seconds!');
+
+    // Start watching for idle time
+    this.reset();
+
+    // Ping server or perform keep-alive actions
+    keepalive.interval(15); // Ping every 15 seconds
+    keepalive.onPing.subscribe(() => this.lastPing = new Date());
+  }
+
+  // Resets the idle timer
+  reset() {
+    this.idle.watch();
+    this.idleState = 'Started.';
+    this.timedOut = false;
+  }
+
+  // Show the popup for inactivity
+  showPopup() {
+    alert('You have been inactive. Please refresh your session.');
+  }
+}
+
+
+
+npm install @ng-idle/core @ng-idle/keepalive angular2-moment
+
+
+
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
+
+// Import NgIdle and Keepalive
+import { NgIdleKeepaliveModule } from '@ng-idle/keepalive';
+import { NgIdleModule } from '@ng-idle/core';
+import { MomentModule } from 'angular2-moment';
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    NgIdleModule.forRoot(),
+    NgIdleKeepaliveModule.forRoot(),
+    MomentModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+
+
+
+
+
