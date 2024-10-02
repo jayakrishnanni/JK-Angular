@@ -1,0 +1,50 @@
+<h2 mat-dialog-title class="dialog-top">
+  Dialog Title
+</h2>
+
+<mat-dialog-content class="dialog-middle">
+  <!-- Middle content goes here -->
+  <p>This is the middle section of the dialog.</p>
+</mat-dialog-content>
+
+<mat-dialog-actions class="dialog-bottom">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true">Ok</button>
+</mat-dialog-actions>
+
+.dialog-top {
+  /* Top section styling */
+  text-align: center;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+.dialog-middle {
+  /* Middle section should be flexible */
+  padding: 1rem;
+  flex-grow: 1;
+}
+
+.dialog-bottom {
+  /* Extra space at the bottom */
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+/* Make the dialog responsive */
+@media (max-width: 768px) {
+  .dialog-middle {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .dialog-middle {
+    font-size: 1rem;
+  }
+}
+
+
+
