@@ -1,0 +1,33 @@
+import { Component, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+
+@Component({
+  selector: 'app-warning-popup',
+  template: `
+    <h2 mat-dialog-title>Idle Warning</h2>
+    <mat-dialog-content>
+      <p>You will be logged out in {{ countdown }} seconds!</p>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+      <button mat-button (click)="stayLoggedIn()">Stay Logged In</button>
+    </mat-dialog-actions>
+  `,
+})
+export class WarningPopupComponent {
+  countdown: number;
+
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
+    this.countdown = data.countdown; // Initial countdown value
+  }
+
+  // Method to update the countdown dynamically
+  updateCountdown(newCountdown: number) {
+    this.countdown = newCountdown;
+  }
+
+  // Method to reset idle timer and close dialog
+  stayLoggedIn() {
+    // You can inject IdleService and reset idle timer here
+    // Close the dialog
+  }
+}
