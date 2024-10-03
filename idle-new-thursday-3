@@ -1,0 +1,86 @@
+import { Injectable } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+import { Idle, Keepalive } from '@ng-idle/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Subject } from 'rxjs';
+import { filter } from 'rxjs/operators';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class IdleService {
+  idleState = 'Not started.';
+  timedOut = false;
+  lastPing?: Date = null;
+  idleTimeoutSubject: Subject<boolean> = new Subject(); // For showing warning modal
+
+  constructor(private idle: Idle, private keepalive: Keepalive, private router: Router, private modalService: NgbModal) {
+    this.setupIdle();
+
+    // Reset idle when the route changes
+    this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe(() => {
+        this.resetIdle(); // Reset idle timer on every route change
+      });
+  }
+
+  // Configure idle and keepalive
+  private setupIdle() {
+    idle.setIdle(300);    // Set idle time to 5 minutes
+    idle.setTimeout(30);  // After idle time, user has 30 seconds to act before timeout
+    idle.setInterrupts([new EventTargetInterruptSource(window, 'mousemove keydown scroll')]);
+
+    idle.onIdleStart.subscribe(() => {
+      this.idleState = 'You are idle!';
+      this.showWarningPopup();
+    });
+
+    idle.onIdleEnd.subscribe(() => {
+      this.idleState = 'No longer idle!';
+      this.closeWarningPopup();
+    });
+
+    idle.onTimeout.subscribe(() => {
+      this.idleState = 'Timed out!';
+      this.timedOut = true;
+      this.showSessionExpiredPopup();
+      this.router.navigate(['/login']); // Redirect to login
+    });
+
+    idle.onTimeoutWarning.subscribe((countdown) => {
+      this.idleState = `You will time out in ${countdown} seconds!`;
+    });
+
+    keepalive.interval(15);
+    keepalive.onPing.subscribe(() => (this.lastPing = new Date()));
+
+    this.startWatching(); // Start idle monitoring
+  }
+
+  startWatching() {
+    this.idle.watch();
+  }
+
+  stopWatching() {
+    this.idle.stop();
+  }
+
+  resetIdle() {
+    this.idle.watch();  // Reset the idle timer
+    console.log('Idle timer reset on route change.');
+  }
+
+  showWarningPopup() {
+    this.idleTimeoutSubject.next(true);
+  }
+
+  closeWarningPopup() {
+    this.idleTimeoutSubject.next(false);
+  }
+
+  showSessionExpiredPopup() {
+    const modalRef = this.modalService.open(ExpiredModalComponent);
+    modalRef.componentInstance.message = 'Your session has expired. Please sign in again.';
+  }
+}
