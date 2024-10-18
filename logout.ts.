@@ -1,0 +1,25 @@
+import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class EventListenerService {
+  constructor(private router: Router) {
+    this.addStorageListener();
+  }
+
+  addStorageListener() {
+    window.addEventListener('storage', this.handleStorageEvent);
+  }
+
+  handleStorageEvent(event: StorageEvent) {
+    console.log('Storage event detected:', event);
+
+    if (event.key === 'isLoggedOut' && event.newValue === 'true') {
+      // Handle the logout action here, e.g., navigating to a login page
+      console.log('User logged out in another tab.');
+      this.router.navigate(['/login']);
+    }
+  }
+}
